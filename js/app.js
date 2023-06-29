@@ -79,20 +79,14 @@ console.log("Exo_5 : \n" + Exo_5(11));
 function Exo_6 (arr) {
     let i = 1;
     let best_num = arr[0];
+    let flag = true;
 
-    // if (i <= arr.length-1) {
-    //     i+=1;
-    //     console.log(i);
-    // }
-
-    // if (best_num < arr[i] && i < arr.length-1) {
+    // if (arr[i] > best_num) {
     //     best_num = arr[i];
     //     i++;
-    //     console.log(best_num);
     // } else {
     //     i++;
     // }
-
 
     // for (let i = 1; i < arr.length; i++) {
     //     if (arr[i] > best_num) {
@@ -191,6 +185,22 @@ console.log("Exo_10 : \n" + Exo_10([3, 2, 6]));
 // f("bonjour je vais bien") affiche "bien vais je bonjour"
 // la fonction ne retourne rien
 
+function Exo_11 (str) {
+    let tmp = [];
+    let result_exo11 = "";
+
+    for (let i = str.length-1; i >= 0; i--) {
+        if (str[i] == " " || i == 0) {
+            tmp.reverse();
+            result_exo11 += tmp.join('') + " ";
+            tmp = [];
+        } else {
+            tmp.push(str[i]);
+        }
+    }
+    return result_exo11;
+}
+console.log("Exo_11 : \n" + Exo_11("bonjour je vais bien"));
 
 
 // EXO 12 :
@@ -212,15 +222,47 @@ console.log("Exo_10 : \n" + Exo_10([3, 2, 6]));
 // d'un tableau à 2 dimensions passé en argument
 // ex: f([[1,2,3],[5,6,7],[39,-23,0]]) retourne -23
 
+function Exo_14 (arr) {
+    let num = 0;
+    let low_num = arr[num][0];
 
+    for (let i = 0; i < arr[num].length-1; i++) {
+        if (arr[num][i] < low_num) {
+            low_num = arr[num][i];
+        }
+
+        if (i == arr[num].length-1 || num < arr.length-1) {
+            i=0;
+            num++;
+        }
+    }
+    return low_num;
+}
+console.log("Exo_14 : \n" + Exo_14([[1, 2, 3], [5, 6, 7], [39, -23, 0]]));
 
 // EXO 15
 // Implémentez une fonction pour rechercher tous les index d'un nombre donné (premier argument)
 // dans un tableau de nombre entier (deuxieme argument).
 // f(3,[3,5,3,6]) retourne [0,2] car le 3 est présent à l'index 0 et à l'index 2
 
+function Exo_15 (index, arr) {
+    let result_exo15 = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] == index) {
+            result_exo15.push(i);
+        }
+    }
+    return result_exo15;
+}
+console.log("Exo_15 : \n" + Exo_15(3, [3, 5, 3, 6]));
 
 
 // EXO 16
 // Implémentez une fonction pour calculer le nombre de chiffres d'un nombre entier.
 // f(102543) retourne 6 car 102543 contient 6 chiffres
+
+function Exo_16 (num) {
+    return num.toString().length;
+}
+console.log("Exo_16 : \n" + Exo_16(102543));
