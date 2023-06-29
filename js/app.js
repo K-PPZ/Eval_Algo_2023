@@ -4,6 +4,10 @@
 // f(4,2) retourne true
 // f(4,7) retourne false
 
+function Exo_1 (num1, num2) {
+    return num1 > num2;
+}
+console.log("Exo_1 : \n" + Exo_1(3, 2));
 
 
 // EXO 2 :
@@ -11,6 +15,14 @@
 // Vous ne devez pas utiliser la méthode reverse
 // f("test") retourne "tset"
 
+function Exo_2 (str) {
+    let result_exo2 = "";
+    for (let i = str.length-1; i >= 0; i--) {
+        result_exo2 += str[i];
+    }
+    return result_exo2;
+}
+console.log("Exo_2 : \n" + Exo_2("test"));
 
 
 // EXO 3 :
