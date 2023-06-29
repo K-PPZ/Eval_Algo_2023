@@ -31,12 +31,28 @@ console.log("Exo_2 : \n" + Exo_2("test"));
 // f("kayak") retourne true
 // f("test") retourne false
 
+function Exo_3 (str) {
+    let result_exo3 = "";
+    for (let i = str.length-1; i >= 0; i--) {
+        result_exo3 += str[i];
+    }
+    return str == result_exo3;
+}
+console.log("Exo_3 : \n" + Exo_3("kayak"));
 
 
 // EXO 4 :
 // Créez une fonction qui retourne le factoriel d'un nombre passé en argument.
 // f(5) retourne 120
 
+function Exo_4 (num) {
+    let result_exo4 = 1;
+    for (let i = 1; i <= 5; i++) {
+        result_exo4 *= i;
+    }
+    return result_exo4;
+}
+console.log("Exo_4 : \n" + Exo_4(5));
 
 
 // EXO 5 :
@@ -45,12 +61,46 @@ console.log("Exo_2 : \n" + Exo_2("test"));
 // f(11) retourne true
 // f(20) retourne false
 
-
+function Exo_5 (num) {
+    let flag = true;
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            flag = false;
+        }
+    }
+    return flag;
+}
+console.log("Exo_5 : \n" + Exo_5(11));
 
 // EXO 6 :
 // Écrire une fonction qui renvoie le plus grand nombre dans un tableau.
 // Vous ne devez pas utiliser de boucle
 
+function Exo_6 (arr) {
+    let i = 1;
+    let best_num = arr[0];
+
+    // if (i <= arr.length-1) {
+    //     i+=1;
+    //     console.log(i);
+    // }
+
+    // if (best_num < arr[i] && i < arr.length-1) {
+    //     best_num = arr[i];
+    //     i++;
+    //     console.log(best_num);
+    // } else {
+    //     i++;
+    // }
+
+
+    // for (let i = 1; i < arr.length; i++) {
+    //     if (arr[i] > best_num) {
+    //         best_num = arr[i];
+    //     }
+    // }
+}
+console.log("Exo_6 : \n" + Exo_6([5, 3, 8, 4, 6, 75]));
 
 
 // EXO 7 :
@@ -59,6 +109,14 @@ console.log("Exo_2 : \n" + Exo_2("test"));
 // Écrivez une fonction retourne vrai si deux chaînes de caractères sont des anagrammes l'une de l'autre ou faux dans le cas contraire.
 // https://fr.wikipedia.org/wiki/Anagramme
 
+function Exo_7 (str1, str2) {
+    // for (let i = 0; i < str1.length; i++) {
+    //     if (str1.includes(str2[i])) {
+    //         console.log(true);
+    //     }
+    // }
+}
+console.log("Exo_7 : \n" + Exo_7("La crise économique", "Le scénario comique"));
 
 
 // EXO 8 :
@@ -67,18 +125,64 @@ console.log("Exo_2 : \n" + Exo_2("test"));
 // f("hopital") retourne vrai car chaque caractère est présent 1 seule fois
 // f("Test") retourne vrai car chaque caractère est présent 1 seule fois (t n'est pas pareil que T)
 
+function Exo_8 (str) {
+    let num_exo8 = 0;
+    let occurence = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[num_exo8] == str[i]) {
+            occurence++;
+            if (i == str.length && num_exo8 < str.length-1) {
+                num_exo8++;
+                i = 0;
+            }
+        }
+    }
+
+    return occurence > 1;
+}
+console.log("Exo_8 : \n" + Exo_8("Test"));
 
 
 // EXO 9 :
 // Implémentez une fonction qui retourne le deuxieme plus grand élément d'un tableau de nombre entier.
 // f([5,6,2,9,23]) retourne 9 car 23 est le plus grand et 9 est le deuxieme plus grand
 
+function Exo_9 (arr) {
+    let best_num = arr[0];
+    let second_best_num = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > best_num) {
+            best_num = arr[i];
+            i = 0;
+        }
+    }
+
+    for (let y = 1; y < arr.length; y++) {
+        if (arr[y] > second_best_num && arr[y] < best_num) {
+            second_best_num = arr[y];
+        }
+    }
+
+    return second_best_num;
+}
+console.log("Exo_9 : \n" + Exo_9([5, 6, 2, 9, 23]));
 
 
 // EXO 10 :
 // Écrivez une fonction pour calculer la somme de tous les nombres pairs d'un tableau.
 // f([3,2,6]) retoune 8 (2+6)
 
+function Exo_10 (arr) {
+    let result_exo10 = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            result_exo10 += arr[i];
+        }
+    }
+    return result_exo10;
+}
+console.log("Exo_10 : \n" + Exo_10([3, 2, 6]));
 
 
 // EXO 11 :
